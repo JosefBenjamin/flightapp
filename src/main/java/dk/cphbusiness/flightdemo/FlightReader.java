@@ -3,6 +3,7 @@ package dk.cphbusiness.flightdemo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.cphbusiness.flightdemo.dtos.FlightDTO;
 import dk.cphbusiness.flightdemo.dtos.FlightInfoDTO;
+import dk.cphbusiness.services.Calculator;
 import dk.cphbusiness.utils.Utils;
 
 import java.io.IOException;
@@ -22,7 +23,10 @@ public class FlightReader {
         try {
             List<FlightDTO> flightList = getFlightsFromFile("flights.json");
             List<FlightInfoDTO> flightInfoDTOList = getFlightInfoDetails(flightList);
-            flightInfoDTOList.forEach(System.out::println);
+            //flightInfoDTOList.forEach(System.out::println);
+            Calculator calculator = new Calculator();
+            // calculator.totalFlightTimeAirline("SAS");
+            calculator.averageFlightTimeAirline("turkish airlines");
         } catch (IOException e) {
             e.printStackTrace();
         }
