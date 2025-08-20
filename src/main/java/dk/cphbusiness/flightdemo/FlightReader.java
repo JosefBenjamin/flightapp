@@ -29,7 +29,8 @@ public class FlightReader {
             // calculator.totalFlightTimeAirline("SAS");
             // calculator.averageFlightTimeAirline("turkish airlines");
             FlightDepartures flightDepartures = new FlightDepartures();
-            flightDepartures.fromAToB("Fukuoka", "Haneda");
+            // flightDepartures.fromAToB("Fukuoka", "Haneda");
+            flightDepartures.departureTime(LocalDateTime.of(2024, 8, 15, 7, 30, 0));
         } catch (IOException e) {
             e.printStackTrace();
         }
