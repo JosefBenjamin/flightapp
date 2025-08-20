@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.cphbusiness.flightdemo.dtos.FlightDTO;
 import dk.cphbusiness.flightdemo.dtos.FlightInfoDTO;
 import dk.cphbusiness.services.Calculator;
+import dk.cphbusiness.services.FlightDepartures;
 import dk.cphbusiness.utils.Utils;
 
 import java.io.IOException;
@@ -26,7 +27,9 @@ public class FlightReader {
             //flightInfoDTOList.forEach(System.out::println);
             Calculator calculator = new Calculator();
             // calculator.totalFlightTimeAirline("SAS");
-            calculator.averageFlightTimeAirline("turkish airlines");
+            // calculator.averageFlightTimeAirline("turkish airlines");
+            FlightDepartures flightDepartures = new FlightDepartures();
+            flightDepartures.fromAToB("Fukuoka", "Haneda");
         } catch (IOException e) {
             e.printStackTrace();
         }
